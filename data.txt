@@ -1,0 +1,9 @@
+This is a sample text file.
+It has multiple lines of text.
+BufferedReader should read this faster
+than FileReader without buffering.
+Let's add some more lines to make it larger.
+Line 6: Java is fun!
+Line 7: Practicing file handling.
+Line 8: The quick brown fox jumps over the lazy dog.
+Line 9: End of sample file.
