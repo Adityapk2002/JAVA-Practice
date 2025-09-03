@@ -38,22 +38,46 @@ import java.util.Stack;
 //     }
 // }
 
+// public class Movehash {
+//     public static String moveHashAtEnd(String str) {
+//         StringBuilder result = new StringBuilder();
+//         int hashCount = 0;
+//         for (char ch : str.toCharArray()) {
+//             if (ch == '#')
+//                 hashCount++;
+//             else
+//                 result.append(ch);
+//         }
+//         return "#".repeat(hashCount) + result.toString();
+//     }
+
+//     public static void main(String[] args) {
+//         String s = "Move#Hash#to#Front";
+//         String ans = moveHashAtEnd(s);
+//         System.out.println(ans);
+//     }
+// }
 public class Movehash {
     public static String moveHashAtEnd(String str) {
-        StringBuilder result = new StringBuilder();
-        int hashCount = 0;
-        for (char ch : str.toCharArray()) {
-            if (ch == '#')
-                hashCount++;
-            else
-                result.append(ch);
+        if (str == null || str.isEmpty()) {
+            return str;
         }
-        return "#".repeat(hashCount) + result.toString();
+        StringBuilder hashes = new StringBuilder();
+        StringBuilder OtherChars = new StringBuilder();
+
+        for (char c : str.toCharArray()) {
+            if (c == '#') {
+                hashes.append(c);
+            } else {
+                OtherChars.append(c);
+            }
+        }
+        return hashes.append(OtherChars).toString();
     }
 
     public static void main(String[] args) {
-        String s = "Move#Hash#to#Front";
-        String ans = moveHashAtEnd(s);
+        String str = "Move#Hash#to#Front";
+        String ans = moveHashAtEnd(str);
         System.out.println(ans);
     }
 }
